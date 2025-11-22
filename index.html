@@ -1,174 +1,211 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Itzmee.Dev</title>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');* {
-  box-sizing: border-box;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Fira Code', monospace;
-  background: #0d0d0d;
-  color: #d0f6ff;
-  scroll-behavior: smooth;
-  background-image: radial-gradient(circle at top left, #1a1a2e 20%, transparent),
-                    radial-gradient(circle at bottom right, #0f0f23 40%, transparent);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      background: #0d0d0d;
+      color: #d0f6ff;
+      scroll-behavior: smooth;
+      background-image: radial-gradient(circle at top left, #1a1a2e 20%, transparent),
+                       radial-gradient(circle at bottom right, #0f0f23 40%, transparent);
+    }
 
-h1, h2 {
-  margin: 0 0 20px;
-}
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
 
-h1 {
-  font-size: 2.2em;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff88;
-}
+    h1, h2 {
+      margin: 0 0 20px;
+    }
 
-.section {
-  margin-bottom: 60px;
-}
+    h1 {
+      font-size: 2.2em;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff88;
+    }
 
-.title {
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #00ffff;
-  border-left: 5px solid #00ffff;
-  padding-left: 10px;
-}
+    .section {
+      margin-bottom: 60px;
+    }
 
-.card {
-  background: #111;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #00ffff30;
-  box-shadow: 0 0 15px #00ffff10;
-  transition: 0.3s ease;
-}
+    .title {
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #00ffff;
+      border-left: 5px solid #00ffff;
+      padding-left: 10px;
+    }
 
-.card:hover {
-  background: #151515;
-  box-shadow: 0 0 20px #00ffff33;
-}
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #00ffff30;
+      box-shadow: 0 0 15px #00ffff10;
+      transition: 0.3s ease;
+    }
 
-a.button {
-  display: inline-block;
-  padding: 10px 18px;
-  margin-top: 12px;
-  color: #000;
-  background: #00ffff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    .card:hover {
+      background: #151515;
+      box-shadow: 0 0 20px #00ffff33;
+    }
 
-a.button:hover {
-  background: #00e0e0;
-}
+    a.button {
+      display: inline-block;
+      padding: 10px 18px;
+      margin-top: 12px;
+      color: #000;
+      background: #00ffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-a {
-  color: #00ffff;
-  text-decoration: none;
-}
+    a.button:hover {
+      background: #00e0e0;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
 
-.code-line {
-  background: #1a1a1a;
-  padding: 10px;
-  border-left: 4px solid #00ffff;
-  font-size: 0.95em;
-  color: #aaffff;
-  margin: 20px 0;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.highlight {
-  color: #00ffff;
-  font-weight: bold;
-}
+    .code-line {
+      background: #1a1a1a;
+      padding: 10px;
+      border-left: 4px solid #00ffff;
+      font-size: 0.95em;
+      color: #aaffff;
+      margin: 20px 0;
+    }
 
-.quote p {
-  font-style: italic;
-  margin: 10px 0;
-  color: #b6f5ff;
-}
+    .highlight {
+      color: #00ffff;
+      font-weight: bold;
+    }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 40px 15px;
-  }
+    /* FOTO PROFIL */
+    .profile-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
 
-  h1 {
-    font-size: 1.6em;
-  }
-}
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00ffff88;
+      box-shadow: 0 0 18px #00ffff55;
+      transition: 0.3s ease;
+    }
 
+    .profile-img:hover {
+      box-shadow: 0 0 25px #00ffffaa;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 15px;
+      }
+      h1 {
+        font-size: 1.6em;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
+    
+    <!-- INTRO SECTION -->
     <div class="section">
       <h1 id="typing"></h1>
+
+      <!-- FOTO PROFIL -->
+      <div class="profile-wrapper">
+        <img src="https://files.catbox.moe/6pdfkb.jpg" alt="Foto Profil" class="profile-img">
+      </div>
+
       <p>seorang <span class="highlight">frontend dev</span> yang doyan ngutak-ngatik tampilan biar enak diliat + dipake. backend? masih <span class="highlight">belajar sambil ngopi</span>. prinsip gw: <span class="highlight">rapi, fungsional, gak ribet</span>.</p>
+
       <div class="code-line">// fokus ke UX, bukan cuma UI</div>
-    </div><div class="section">
-  <div class="title">// catatan kecil buat sesama coder</div>
-  <div class="card">
-    <p id="quote"></p>
+    </div>
+
+    <!-- QUOTE SECTION -->
+    <div class="section">
+      <div class="title">// catatan kecil buat sesama coder</div>
+      <div class="card">
+        <p id="quote"></p>
+      </div>
+    </div>
+
+    <!-- PROJECT SECTION -->
+    <div class="section">
+      <div class="title">// beberapa project gw</div>
+
+      <div class="card">
+        <strong>Seo nari AI Chat</strong>
+        <p>AI web buat nemenin ngobrol random, cocok buat yang suka mikir aneh-aneh atau sekadar pengen ditemenin ngobrol pas ngetik HTML tengah malem.</p>
+        <a href="https://seonarichat.netlify.app" class="button" target="_blank">Coba Sekarang</a>
+      </div>
+
+      <div class="card">
+        <strong>Seo nari Bot (WhatsApp)</strong>
+        <p>Bot WA yang bisa jawab cepet, kasih jokes, bantuin tugas, atau sekadar nemenin gabut. <span class="highlight">Instan. Efisien. Anti-boring.</span></p>
+        <a href="https://wa.me/6285729293581" class="button" target="_blank">Chat Bot WA</a>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="section">
+      <div class="title">// tools yang sering gw pake</div>
+      <div class="card">
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>ReactJS + TailwindCSS</li>
+          <li>Git & GitHub</li>
+          <li>Node.js (belajar sambil jalan)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+      <div class="title">// kontak gw</div>
+      <p>Email: <a href="mailto:denisukayam@gmail.com">denisukayam@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/itzmeehehe_" target="_blank">@itzmeehehe_</a></p>
+      <p>TikTok: <a href="https://tiktok.com/@itzmeehehe_" target="_blank">@itzmeehehe_</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6287815194609" target="_blank">+62 878-1519-4609</a></p>
+    </div>
+
   </div>
-</div>
 
-<div class="section">
-  <div class="title">// beberapa project gw</div>
-  <div class="card">
-    <div><strong>Seo nari AI Chat</strong></div>
-    <p>AI web buat nemenin ngobrol random, cocok buat yang suka mikir aneh-aneh atau sekadar pengen ditemenin ngobrol pas ngetik HTML tengah malem.</p>
-    <a href="https://seonarichat.netlify.app" class="button" target="_blank">Coba Sekarang</a>
-  </div>
-
-  <div class="card">
-    <div><strong>Seo nari Bot (WhatsApp)</strong></div>
-    <p>Bot WA yang bisa jawab cepet, kasih jokes, bantuin tugas, atau sekadar nemenin gabut. <span class="highlight">Instan. Efisien. Anti-boring.</span></p>
-    <a href="https://wa.me/6285729293581" class="button" target="_blank">Chat Bot WA</a>
-  </div>
-</div>
-
-<div class="section">
-  <div class="title">// tools yang sering gw pake</div>
-  <div class="card">
-    <ul>
-      <li>HTML / CSS / JavaScript</li>
-      <li>ReactJS + TailwindCSS</li>
-      <li>Git & GitHub</li>
-      <li>Node.js (belajar sambil jalan)</li>
-    </ul>
-  </div>
-</div>
-
-<div class="section">
-  <div class="title">// kontak gw</div>
-  <p>Email: <a href="mailto:denisukayam@gmail.com">denisukayam@gmail.com</a></p>
-  <p>Instagram: <a href="https://instagram.com/itzmeehehe_" target="_blank">@itzmeehehe_</a></p>
-  <p>TikTok: <a href="https://tiktok.com/@itzmeehehe_" target="_blank">@itzmeehehe_</a></p>
-  <p>WhatsApp: <a href="https://wa.me/6287815194609" target="_blank">+62 878-1519-4609</a></p>
-</div>
-
-  </div>  <script>
+  <script>
     // Typing effect for intro
     const introText = "< ? halo, saya Deni Arya Kusuma / >";
     let i = 0;
@@ -182,7 +219,7 @@ a:hover {
     }
     typeWriter();
 
-    // Typing effect for quote rotator
+    // Quotes
     const quotes = [
       "Ngoding itu bukan soal ngerti semua, tapi soal tau harus nyari di mana.",
       "Bugs itu temen, bukan musuh. Mereka ngajarin lo sabar.",
@@ -216,5 +253,6 @@ a:hover {
     }
 
     setTimeout(typeQuote, 2000);
-  </script></body>
-</html>
+  </script>
+</body>
+                                                                                                                                                                                                            </html>
